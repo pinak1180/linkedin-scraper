@@ -129,8 +129,8 @@
   <td><% @linkedin_scarper.languages.each do |c|%>
   
   <tr>
-  <td><%#=c[:name]%></td>&nbsp
-  <td><%#=c[:link]%></td>
+  <td><%=c[:name]%></td>&nbsp
+  <td><%=c[:link]%></td>
   
   </tr>
   <% end  %>
