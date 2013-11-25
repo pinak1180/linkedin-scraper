@@ -1,0 +1,50 @@
+<%if @linkedin_scarpers.present? %>
+  <div class="row-fluid">
+                        <!-- START Basic Table -->
+  <div class="span12 widget dark stacked">
+    <header>
+        <h4 class="title">Scarped  Profiles</h4>
+        <!--/ END Toolbar -->
+    </header>
+    <section class="body">
+      <div class="body-inner no-padding">
+        <table class="table">
+          <thead>
+          <tr>
+      <th class="table_header_text">First name</th>
+      <th class="table_header_text">Last name</th>
+      <th class="table_header_text">Name</th>
+      <th class="table_header_text">Title</th>
+      <th class="table_header_text">Location</th>
+      <th class="table_header_text">Country</th>
+      <th class="table_header_text">Industry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @linkedin_scarpers.each do |linkedin_scarper| %>
+      <tr>
+        <td><%= linkedin_scarper.first_name %></td>
+        <td><%= linkedin_scarper.last_name %></td>
+        <td><%= linkedin_scarper.name %></td>
+        <td><%= linkedin_scarper.title %></td>
+        <td><%= linkedin_scarper.location %></td>
+        <td><%= linkedin_scarper.country %></td>
+        <td><%= linkedin_scarper.industry %></td>
+        <td> <%= delete_link (linkedin_scarper) %></td>
+      </tr>
+    <% end %>
+   </tbody>
+      </table>
+    </div>
+  </div>
+  <%= paginate @linkedin_scarpers, :theme => "my_custom_theme" %>
+<% else %>
+No Profile Present!<br>
+<% end %>
+<br>
+
+<%#= link_to 'New Linkedin scarper', new_linkedin_scarper_path %>

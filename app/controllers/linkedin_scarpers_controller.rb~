@@ -1,0 +1,105 @@
+class LinkedinScarpersController < ApplicationController
+  before_action :set_linkedin_scarper, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  # GET /linkedin_scarpers
+  # GET /linkedin_scarpers.json
+  def index
+    @linkedin_scarpers = LinkedinScarper.all.page(params[:page]).per(10)
+  end
+
+  # GET /linkedin_scarpers/1
+  # GET /linkedin_scarpers/1.json
+  def show
+  end
+
+  # GET /linkedin_scarpers/new
+  def new
+    @linkedin_scarper = LinkedinScarper.new
+  end
+
+  # GET /linkedin_scarpers/1/edit
+  def edit
+  end
+
+  # POST /linkedin_scarpers
+  # POST /linkedin_scarpers.json
+  def create
+   if params[:linkedin_scarper][:profile_link].present?
+   
+    @profile_link =  Linkedin::Profile.get_profile(params[:linkedin_scarper][:profile_link])
+    @linkedin_scarper = LinkedinScarper.new
+    @linkedin_scarper.first_name   =  @profile_link.first_name   
+    @linkedin_scarper.last_name    = @profile_link.last_name  
+    @linkedin_scarper.name         = @profile_link.name  
+    @linkedin_scarper.title        = @profile_link.title  
+    @linkedin_scarper.summary      = @profile_link.summary 
+    @linkedin_scarper.location     = @profile_link.location 
+    @linkedin_scarper.country      = @profile_link.country 
+    @linkedin_scarper.industry     = @profile_link.industry   
+    @linkedin_scarper.picture      = @profile_link.picture 
+    @linkedin_scarper.skills       = @profile_link.skills 
+    @linkedin_scarper.organization = @profile_link.organizations 
+    @linkedin_scarper.education    = @profile_link.education 
+    @linkedin_scarper.websites     = @profile_link.websites 
+    @linkedin_scarper.groups       = @profile_link.groups 
+    @linkedin_scarper.languages    = @profile_link.groups 
+    @linkedin_scarper.certifications  = @profile_linkcertifications  
+    @linkedin_scarper.current_companies = @profile_link.current_companies 
+    @linkedin_scarper.recommended_visitors = @profile_link.recommended_visitors
+    
+
+    respond_to do |format|
+      if @linkedin_scarper.save
+        format.html { redirect_to @linkedin_scarper, notice: 'Linkedin scarper was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @linkedin_scarper }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @linkedin_scarper.errors, status: :unprocessable_entity }
+      end
+    end
+    else
+     flash[:notice] ="Please Provide Link"
+     redirect  :back
+    end
+  end
+
+  # PATCH/PUT /linkedin_scarpers/1
+  # PATCH/PUT /linkedin_scarpers/1.json
+  def update
+    respond_to do |format|
+      if @linkedin_scarper.update(linkedin_scarper_params)
+        format.html { redirect_to @linkedin_scarper, notice: 'Linkedin scarper was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @linkedin_scarper.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /linkedin_scarpers/1
+  # DELETE /linkedin_scarpers/1.json
+  def destroy
+    @linkedin_scarper.destroy
+    respond_to do |format|
+      format.html { redirect_to linkedin_scarpers_url }
+      format.json { head :no_content }
+    end
+  end
+  
+  def get_profile_link
+    
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_linkedin_scarper
+      @linkedin_scarper = LinkedinScarper.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def linkedin_scarper_params
+      params.require(:linkedin_scarper).permit(:first_name, :last_name, :name, :title, :location, :country, :industry, :picture, :skills, :organization, :education, :websites, :groups, :languages, :certifications, :current_companies, :past_companies, :recommended_visitors)
+    end
+    
+end

@@ -1,0 +1,19 @@
+<!-- BEGIN EMPTY PAGE SIDEBAR -->
+  <div class="page-sidebar nav-collapse collapse visible-phone visible-tablet">
+    <ul class="page-sidebar-menu">
+      <li class="<%= 'active' if controller.controller_name == 'dashboard' %>">
+        <a href='<%= root_path %>'>
+          Dashboard                        
+        </a>
+      </li>
+      <li class="<%= 'active' if controller.controller_name == 'properties' %>">
+        <a href='<%=properties_path%>'>
+          Properties
+        </a>
+      </li>
+      <li class="<%= 'active' if controller.controller_name == 'users' %>">
+        <a href='<%=users_path%>'>Users</a>
+      </li>
+    </ul>
+  </div>
+<!-- END EMPTY PAGE SIDEBAR -->

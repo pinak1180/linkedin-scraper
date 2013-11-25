@@ -1,0 +1,211 @@
+<div class="row-fluid">
+                        <!-- START Basic Table -->
+  <div class="span12 widget dark stacked">
+    <header>
+      <h4 class="title">Profile</h4>
+      <!--/ END Toolbar -->
+    </header>
+    <section class="body">
+      <div class="body-inner no-padding">
+        <table class="table">
+          <thead>
+            <tr>
+
+  <td><strong>First name:</strong></td>
+  <td><%= @linkedin_scarper.first_name %></td>
+</tr>
+
+<tr>
+  <td><strong>Last name:</strong></td>
+  <td><%= @linkedin_scarper.last_name %></td>
+</tr>
+
+<tr>
+  <td><strong>Name:</strong></td>
+  <td><%= @linkedin_scarper.name %></td>
+</tr>
+
+<tr>
+  <td><strong>Title:</strong></td>
+  <td><%= @linkedin_scarper.title %></td>
+</tr>
+
+<tr>
+  <td><strong>Location:</strong></td>
+  <td><%= @linkedin_scarper.location %></td>
+</tr>
+
+<tr>
+  <td><strong>Country:</strong></td>
+  <%= @linkedin_scarper.country %>
+</tr>
+
+<tr>
+  <td><strong>Industry:</strong></td>
+  <td><%= @linkedin_scarper.industry %></td>
+</tr>
+
+<tr>
+  <td><strong>Picture:</strong></td>
+  <td><img src=<%= @linkedin_scarper.picture %></img></td>
+</tr>
+
+<tr>
+  <td><strong>Skills:</strong></td>
+  <td><%= @linkedin_scarper.skills %></td>
+</tr>
+
+<tr>
+  <td><strong>Organization:</strong></td>
+  <td><%#= @linkedin_scarper.organization %></td>
+  <table>
+  <th>  Name  </th>
+  <th> Start Date</th>
+  <th> End  date  </th>
+  
+  <td><% @linkedin_scarper.organization.each do |c|%>
+  
+  <tr>
+  <td><%=c[:name]%></td>&nbsp
+  <td>&nbsp<%=c[:start_date]%></td>
+  <td><%=c[:end_date]%></td>
+  </tr>
+  <% end  %>
+  </table>
+</tr>
+
+<tr>
+  <td><strong>Education:</strong></td>
+  <td><%#= @linkedin_scarper.education %></td>
+  <table>
+  <th>  Name  </th>
+  <th>Description</th>
+  <th>period   </th>
+  
+  <td><% @linkedin_scarper.education.each do |c|%>
+  
+  <tr>
+  <td><%=c[:name]%></td>&nbsp
+  <td><%=c[:description]%></td>
+  <td><%=c[:period]%></td>
+  
+  </tr>
+  <% end  %>
+  </table>
+</tr>
+
+<tr>
+  <td><strong>Websites:</strong></td>
+  <td><%= @linkedin_scarper.websites %></td>
+  
+</tr>
+
+<tr><br>
+  <td><strong>Groups:</strong></td>
+  <td><%#= @linkedin_scarper.groups %></td>
+  <table>
+  <th>  Name  </th>
+  <th>Link</th>
+  
+  <td><% @linkedin_scarper.groups.each do |c|%>
+  
+  <tr>
+  <td><%=c[:name]%></td>&nbsp
+  <td><%=c[:link]%></td>
+  
+  </tr>
+  <% end  %>
+  </table>
+</tr>
+
+<tr>
+  <td><strong>Languages:</strong></td>
+  <td><%#= @linkedin_scarper.languages %></td>
+  <table>
+  <th>  Name  </th>
+  <th></th>
+  <th>Link</th>
+  
+  <td><% @linkedin_scarper.languages.each do |c|%>
+  
+  <tr>
+  <td><%=c[:name]%></td>&nbsp
+  <td><%=c[:link]%></td>
+  
+  </tr>
+  <% end  %>
+  </table>
+</tr>
+
+<tr>
+  <td><strong>Certifications:</strong></td>
+  <td><%= @linkedin_scarper.certifications %></td>
+</tr>
+
+<tr>
+  <td><strong>Current companies:</strong></td>
+  <table>
+  <th>  Title </th>
+  <th>  Company  </th>
+  <th> Start date</th>
+  <th> End  Date  </th>
+  <th>Linkedin_company_url </tf>
+  <th>Url</th>
+  <th>Type</th>
+  <th>Company  Size</th>
+  <th>Type</th>
+  <th>Address</th>
+  <th>founded</th>
+  
+  <td><%  @linkedin_scarper.current_companies.each do |c|%>
+  
+  <tr>
+  <td><%=c[:title]%></td>
+  <td><%=c[:company]%></td>
+  <td><%=c[:start_date]%></td>
+  <td><%=c[:end_date]%></td>
+  <td><%=c[:linkedin_company_url]%></td>
+  <td><%=c[:url]%></td>
+  <td><%=c[:type]%></td>
+  <td><%=c[:company_size]%></td>
+  <td><%=c[:type]%></td>
+  <td><%=c[:founded]%></td>
+  </tr>
+  <% end  %>
+  </table>
+</tr>
+
+<tr>
+  <td><strong>Past companies:</strong></td>
+  <td><%= @linkedin_scarper.past_companies %></td>
+</tr>
+
+<tr>
+  <td><strong>Recommended visitors:</strong></td>
+  <table>
+  <th>  Link </th>
+  <th>  Name  </th>
+  <th> Title</th>
+  <th> Company  </th>
+  
+  <td><% @linkedin_scarper.recommended_visitors.each do |c|%>
+  
+  <tr>
+  <td><%=c[:link]%></td>
+  <td><%=c[:name]%></td>
+  <td><%=c[:title]%></td>
+  <td><%=c[:company]%></td>
+  </tr>
+  <% end  %>
+  </table>
+  </td>
+</tr>
+
+</thead>
+        </table> 
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Back', linkedin_scarpers_path %>
+</div>
+

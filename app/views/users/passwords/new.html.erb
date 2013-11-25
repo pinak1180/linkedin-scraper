@@ -1,0 +1,20 @@
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class => "widget stacked teal widget-login",:method => :post }) do |f| %>
+  <section class="body">
+    <div class="body-inner">
+     <!-- START Logo -->
+      <div class="logo" align="center">
+        <h3 class="">Forget Password ?</h3>
+        <h5>Enter your e-mail address below to reset your password.</h5>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.email_field :email, :autofocus => true,:placeholder => "Email" ,:class => "span12" %>
+            <i class="icon-user input-icon"></i>
+        </div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">
+      Submit</button>            
+    </div>
+<%end%>

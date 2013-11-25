@@ -1,0 +1,49 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => {:class => "widget stacked teal widget-login" }, :name=>"login") do |f| %>  
+  
+  <section class="body">
+    <div class="body-inner">
+     <!-- START Logo -->
+      <div class="logo" align="center">
+         <!--<a href="#"><img src="img/logo-dark.png"></a> -->
+         Linkedin Scraper
+      </div>
+      <div class="avatar">
+        <span class="mask"></span>
+          <img src="/assets/avatar.png">
+          <h5 align="center">Hye!</h5>
+      </div><!--/ Avatar -->
+      <div class="control-group">
+        <div class="controls">
+            <%= f.email_field :email, :autofocus => true,:placeholder => "Email" ,:class => "span12" %>
+            <i class="icon-user input-icon"></i>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.password_field :password ,:placeholder => "Password",:class => "span12" %><i class="icon-lock input-icon"></i>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">    
+          <% if devise_mapping.rememberable? %>            
+            <%= f.check_box :remember_me ,:class => "icheckbox_minimal-grey" %>
+            
+            <%= f.label :remember_me ,:class => "checkbox styled"%>
+          <% end %>     
+        </div>
+      </div><!--/ Checkbox --> 
+
+      <div class="control-group">
+        <div class="controls">
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+            <%= link_to " Forgot Your Password? click here to reset it.", new_password_path(resource_name) %>
+          <% end -%>
+        </div>
+      </div><!--/ Register Link -->
+    </div>    
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="button" class="btn">Cancel</button>
+    </div>
+  </section>    
+<%end%>

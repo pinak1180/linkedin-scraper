@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/builder_app/!svn/ver/19/app/views/kaminari/my_custom_theme
+END
+_paginator.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/builder_app/!svn/ver/19/app/views/kaminari/my_custom_theme/_paginator.html.erb
+END
+_gap.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/builder_app/!svn/ver/19/app/views/kaminari/my_custom_theme/_gap.html.erb
+END
+_prev_page.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/builder_app/!svn/ver/19/app/views/kaminari/my_custom_theme/_prev_page.html.erb
+END
+_next_page.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/builder_app/!svn/ver/19/app/views/kaminari/my_custom_theme/_next_page.html.erb
+END
+_page.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/builder_app/!svn/ver/19/app/views/kaminari/my_custom_theme/_page.html.erb
+END

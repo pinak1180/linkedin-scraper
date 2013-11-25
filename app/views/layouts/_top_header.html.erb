@@ -1,0 +1,46 @@
+ <header id="header">
+                <!-- START Logo -->
+                <div class="logo hidden-phone hidden-tablet">
+                    <a href="<%= root_path %>"><img src="/assets/rails.png" alt=""></a>
+                    <small class="version"></small>
+                </div>
+                <!--/ END Logo -->
+
+                <!-- START Mobile Sidebar Toggler -->
+                <a href="<%= root_path %>" class="toggler" data-toggle="sidebar"><span class="icon icone-reorder"></span></a>
+                <!--/ END Mobile Sidebar Toggler -->
+
+                <!-- START Toolbar -->
+                <ul class="toolbar" id="toolbar">
+                    
+
+
+                    <!-- START Profile -->
+                    <li class="profile">
+                        <a href="#" data-toggle="dropdown">
+                            <span class="avatar"><img src="" alt=""></span>
+                            <span class="text hidden-phone">Admin<span class="role"><%= current_user.email%></span></span>
+                            <span class="arrow icone-caret-down"></span>
+                        </a>
+                        <!-- START Dropdown Menu -->
+                        <div class="dropdown-menu" role="menu">
+                            <header>
+                                Your Profile 
+                            </header>
+                            <ul class="body">
+                                <li>
+                                    <a href="<%= edit_user_registration_path%>"><i class="icon-tasks"></i> Change Password</a>
+                                </li>
+                      
+                       
+                            </ul>
+                            <footer>
+                                <a href="<%= destroy_user_session_path%>" class="text" data-method='delete'><span class="icon icone-off"></span> Sign Off</a>
+                            </footer>
+                        </div>
+                        <!--/ END Dropdown Menu -->
+                    </li>
+                    <!--/ END Profile -->
+                </ul>
+                <!--/ END Toolbar -->
+            </header>

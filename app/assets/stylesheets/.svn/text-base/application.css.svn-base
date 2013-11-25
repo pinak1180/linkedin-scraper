@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.icheck.min
+ *= require bootstrap.min
+ *= require bootstrap-responsive.min 
+ *= require bootstrap-fileupload.min
+ *= require jquery-ui-1.9.2.min
+ *= require bootstrapSwitch.min
+ *= require dataTables-bootstrap.min 
+ *= require daterangepicker.min
+ *= require fullcalendar.min
+ *= require builder_app
+ *= require jquery.cleditor.min
+ *= require jquery.gritter.min
+ *= require jquery.minicolors.min
+ *= require jquery.snippet.min
+ *= require jquery.tagit.min
+ *= require jquery.themer.min
+ *= require jquery.validationEngine.min
+ *= require perfect-scrollbar.min
+ *= require select2.min
+ *= require style.css
+ *= require gmaps4rails
+ *= require serene
+ *= require bootstrap-tree.css
+ */
+.visual {
+float: right;
+margin-top: -50px;
+font-size: 69px;
+}
+.i_font
+{
+font-size: 65px;
+}

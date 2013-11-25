@@ -1,0 +1,9 @@
+class LinkedinScarper < ActiveRecord::Base
+serialize :organization,Array
+serialize :websites,Array
+serialize :education,Array
+serialize :groups,Array
+serialize :languages,Array
+serialize :certifications,Array
+:websites,:education,:groups,:languages,:certifications,:current_companies,:past_companies
+end

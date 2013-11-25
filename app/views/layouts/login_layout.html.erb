@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Linkedin scraper</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application"  %>
+    <%= csrf_meta_tags %>
+  </head>
+   <div id="wrapper">
+    <!-- START Template Canvas -->
+    <div id="canvas">
+      <!-- START Themer -->
+      <!-- You can remove this. For demo purpose only -->
+      <div class="container-fluid">
+        <!-- START Row -->
+        <div class="row-fluid">
+          <!-- START Login Widget Form -->
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <p>&nbsp;</p>
+          <% flash.each do |key, message| %>
+            <div id="flash_<%= key %>" class="alert"><%= message %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>

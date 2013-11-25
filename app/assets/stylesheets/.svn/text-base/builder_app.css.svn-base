@@ -1,0 +1,45 @@
+.label_display{
+	display: inline;
+}
+.inline-errors{
+  width: 520px;
+  color: red;
+  font-weight: bold;
+  min-height: 21px;
+  line-height: 10px;
+  display: inline-block;
+  padding-top: 10px;
+  margin-left: 3px;
+}
+.table_header_text{
+	text-align: left;
+}
+.tabbable{
+	padding-top: 59px;
+}
+form li{
+list-style: none;	
+}
+
+.title{
+  display: block;
+  margin-top: 5px;
+  text-decoration: none !important;
+}
+.title:hover{
+  background-color: #EEE;
+}
+
+.add_permissions{
+ float: right;
+ margin-right: 7px;
+}
+.add_files{
+ float: right
+}
+
+.remove_folder{
+  float: right;
+  margin-right: 530px;
+  margin-top: 7px;
+} 
