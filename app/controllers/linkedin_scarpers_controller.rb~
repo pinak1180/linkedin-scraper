@@ -26,7 +26,7 @@ class LinkedinScarpersController < ApplicationController
   def create
    if params[:linkedin_scarper][:profile_link].present?
    
-    @profile_link =  Linkedin::Profile.get_profile(params[:linkedin_scarper][:profile_link])
+    @profile_link =  Linkedin::Profile.get_profile("http://in.linkedin.com/pub/dipak-panchal/67/b42/34a")
     @linkedin_scarper = LinkedinScarper.new
     @linkedin_scarper.first_name   =  @profile_link.first_name   
     @linkedin_scarper.last_name    = @profile_link.last_name  
