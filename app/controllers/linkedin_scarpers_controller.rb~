@@ -59,7 +59,7 @@ class LinkedinScarpersController < ApplicationController
     end
     else
      flash[:notice] ="Please Provide Link"
-     redirect  :back
+     redirect_to :back
     end
   end
 
