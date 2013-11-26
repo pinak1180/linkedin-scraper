@@ -1,3 +1,9 @@
+PATH
+  remote: my_gems/linkedin-scraper_gem
+  specs:
+    linkedin-scraper (0.1.0)
+      mechanize
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -70,8 +76,6 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.8.1)
-    linkedin-scraper (0.1.0)
-      mechanize
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -173,7 +177,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
-  linkedin-scraper
+  linkedin-scraper!
   mysql2
   pg
   rails (= 4.0.1)
