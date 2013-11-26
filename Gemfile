@@ -44,7 +44,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'devise'
-gem  'linkedin-scraper', :path => "my_gems/linkedin-scraper_gem"
+gem  'linkedin-scraper', :path => "vendor/linkedin-scraper_gem"
 gem 'kaminari'
 gem "seed_dump", "~> 2.0.0"
 group :production do

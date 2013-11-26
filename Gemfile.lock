@@ -1,5 +1,5 @@
 PATH
-  remote: my_gems/linkedin-scraper_gem
+  remote: vendor/linkedin-scraper_gem
   specs:
     linkedin-scraper (0.1.0)
       mechanize
