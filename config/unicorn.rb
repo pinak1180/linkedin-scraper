@@ -1,6 +1,6 @@
 # config/unicorn.rb
-worker_processes Integer(ENV["WEB_CONCURRENCY"] || 8)
-timeout 300
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
+timeout 800
 preload_app true
 #listen 8080
 
