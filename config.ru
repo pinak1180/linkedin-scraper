@@ -10,10 +10,10 @@ env = ENV['RACK_ENV'] || 'development'
 require 'em-proxy'
 require 'logger'
 require 'heroku-forward'
-require 'heroku/forward/backends/thin'
+require 'heroku/forward/backends/unicorn'
 
 application = File.expand_path('../myapp.ru', __FILE__)
-backend = Heroku::Forward::Backends::Thin.new(application: application, env: env)
+config_file = File.expand_path('../config/unicorn.rb', __FILE__)
+backend = Heroku::Forward::Backends::Unicorn.new(application: application, env: env, config_file: config_file)
 proxy = Heroku::Forward::Proxy::Server.new(backend, host: '0.0.0.0', port: port)
-proxy.logger = Logger.new(STDOUT)
 proxy.forward!
